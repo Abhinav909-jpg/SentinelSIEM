@@ -130,6 +130,6 @@ Features:
 -   AWS CloudTrail ingestion
 -   Sigma rule compatibility
 -   Threat Intelligence integration
--   
+
 -   # Machine Learning anomaly detection
 -   Machine Learning anomaly detection
