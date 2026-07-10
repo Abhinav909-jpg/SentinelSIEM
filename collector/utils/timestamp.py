@@ -1,12 +1,14 @@
 import random
 from datetime import datetime, timezone, timedelta
 
-def get_current_utc_timestamps():
+
+def get_current_utc_timestamp():
     current_time = datetime.now(timezone.utc)
     return iso8601_formatting(current_time)
 
+
 def iso8601_formatting(timestamp):
-    iso_string = timestamp.isoformat(timespec='seconds').replace('+00:00', 'Z')
+    iso_string = timestamp.isoformat(timespec="seconds").replace("+00:00", "Z")
     return iso_string
 
 
@@ -14,6 +16,7 @@ def iso8601_formatting(timestamp):
 def generate_random_timestamp(start_time, end_time):
     if start_time >= end_time:
         raise ValueError("start_time must be before end_time")
+
     time_difference = end_time - start_time
     total_seconds = int(time_difference.total_seconds())
     random_seconds = random.randint(0, total_seconds)
@@ -21,11 +24,17 @@ def generate_random_timestamp(start_time, end_time):
     return new_time
 
 
-# This function will create a loop and make a list of desired number of timestamps
+# This function will create a list of desired number of timestamps
 def random_timestamps(start_time, end_time, num_of_timestamps):
     timestamps = []
-    for timestamp in range(num_of_timestamps):
-        timestamps.append(iso8601_formatting(generate_random_timestamp(start_time, end_time)))
+
+    for _ in range(num_of_timestamps):
+        timestamps.append(
+            iso8601_formatting(
+                generate_random_timestamp(start_time, end_time)
+            )
+        )
+
     return timestamps
 
 
