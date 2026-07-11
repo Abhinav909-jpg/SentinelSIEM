@@ -8,7 +8,7 @@ def get_current_utc_timestamp():
 
 
 def iso8601_formatting(timestamp):
-    iso_string = timestamp.isoformat(timespec="seconds").replace("+00:00", "Z")
+    iso_string = timestamp.isoformat().replace("+00:00", "Z")
     return iso_string
 
 
